@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Build a fake python package from the information found in gir files"""
+from __future__ import unicode_literals
 import os
 import keyword
 from lxml import etree
@@ -229,7 +230,7 @@ def generate_fakegir():
                                     module_name + ".py")
         with open(fakegir_path, 'w') as fakegir_file:
             fakegir_file.write("# -*- coding: utf-8 -*-\n")
-            fakegir_file.write(fakegir_content)
+            fakegir_file.write(fakegir_content.encode("utf-8"))
 
 if __name__ == "__main__":
     generate_fakegir()
